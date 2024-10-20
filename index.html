@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>web-dev-assignment-six</title>
+      <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon">
+      <!-- tailwind css and daisy ui -->
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- font-awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+      <!-- google fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+      .lato-regular {
+      font-family: "Lato", sans-serif;
+}
+</style>
+</head>
+<body class="lato-regular">
+
+<header class="w-11/12 mx-auto ">
+
+<!-- navbar -->
+
+      <nav class="navbar py-5">
+            <div class="navbar bg-base-100">
+                  <div class="navbar-start">
+                  <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden py-2 px-3 rounded-full">
+            <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+                  </div>
+                  <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                  </ul>
+                  </div>
+                  <div class="flex gap-4 btn btn-ghost">
+                        <img class="" src="./images/logo.webp" alt="">
+                        <a class="text-2xl font-bold">Peddy</a>
+                  </div>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 text-xl font-bold">
+                  <li><a>Home</a></li>
+                  <li><a>Shop</a></li>
+                  <li><a>Contact</a></li>
+                  </ul>
+            </div>
+                  <div class="navbar-end">
+                        <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="">
+                  </div>
+            </div>
+      </nav>
+      
+<!-- header content -->
+
+      <section class="banner md:w-9/12 mx-auto mt-10 text-center">
+            <div class="flex gap-4 justify-center items-center">
+                  <p class="text-stone-600 text-[20px] font-bold ">Bringing Families Together&#x1F49F;</p>
+                  <img src="https://img.icons8.com/?size=48&id=QV5JEtrTP6nH&format=png" alt="" class="w-6 h-6">
+            </div>
+            <h1 class="font-bold py-5 text-5xl md:w-8/12 mx-auto "> Your Path to Adoption Starts Here </h1>
+            <p class="text-stone-700 md:w-8/12 mx-auto ">
+            It is a long established fact that a reader will be distracted by the readable content of a <br> page when looking at its layout. The point of using Lorem Ipsum is that it has a.
+            </p>
+            <a href="#pets"><button  class="px-8 py-3 bg-teal-800 text-white rounded-lg my-5" > View More </button></a>
+            <img src="./images/pet.webp" alt="" class="mx-auto">
+      </section>
+</header>
+
+
+<main class="w-11/12 mx-auto">
+      <section class="text-center md:w-9/12 mx-auto py-10">
+            <h1 class="text-4xl font-bold py-5"> Adopt Your Best Friend </h1>
+            <p class=" md:w-9/12 mx-auto ">
+            It is a long established fact that a reader will be distracted by the readable content of a page <br>
+            when looking at its layout. The point of using Lorem Ipsum is that it has a.
+            </p>
+      </section>
+
+
+      <section id="categories" class="grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4 md:gap-10 my-10 md:w-9/12 mx-auto "></section>
+
+      <div class="flex justify-between items-center md:w-11/12 mx-auto mt-10 mb-10 ">
+            <h1 class="border-black font-bold text-2xl">Best Deals For You</h1>
+            <button onclick="sortByPrice()" class=" px-8 py-2 rounded-lg shadow-md bg-teal-700 text-white">Sort By Price</button>
+      </div>
+
+<!-- liked button -->
+
+      <div  class="items-start md:grid gap-5 grid-cols-4 " >          
+            <div id="pets" class=" gap-5 col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 " ></div>
+            <div class="  mt-10 md:mt-0 border shadow-lg rounded-lg row-auto row-end-auto ">
+                  <h1 class="font-bold text-2xl m-4 text-center border-b-2 pb-5 ">Liked Peddy</h1>
+                  <div id="liked-images" class="card grid grid-cols-2  "></div>
+            </div>
+      </div>
+</main>
+
+
+<!-- modal section -->
+
+
+<!-- Adopt Modal content -->
+
+<div class="w-10/12 mx-auto md:w-full">
+      <dialog id="adoptModal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box w-10/12 mx-auto md:w-full mb-10 rounded-lg">
+                  <h3 class="font-bold text-lg"> </h3>
+                  <p id="adoptCountdown" class="py-4 text-lg"> </p>
+            <div>
+                  <div id="modal-content2"></div>
+            </div>
+            </div>
+      </dialog>
+</div>
+
+<!-- Open the modal using ID.showModal() method -->
+
+<div class="w-10/12 mt-10 md:mt-0 mx-auto md:w-full">
+      <dialog id="showModalPetDetails" class="modal modal-bottom my-10 md:my-0 sm:modal-middle">
+            <div class="modal-box w-10/12 mx-auto md:w-full mb-10 rounded-lg m-0 md:mb-0">
+            <div class="modal-action mt-0">
+                  <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-1 md:right-6 md:top-3"><span class="md:text-xl bg-teal-100 rounded-full border-2 border-teal-800 md:px-4 py-[6px] shadow-md px-[8px] md:py-2 ">✕</span></button>
+                  </form>
+            </div>
+      <div id="modal-content"></div>   
+            </div>
+      </dialog>
+</div>
+
+
+<!-- Loading Spinner -->
+
+      <div id="loading-spinner" class="hidden items-center fixed inset-0 bg-gray-300 flex justify-center z-50 bg-opacity-75">
+            <span class="loading loading-bars loading-lg items-center mx-auto"></span>
+      </div>
+
+
+<!-- footer section -->
+
+<footer class="bg-[#000] mt-10">
+      <div class="sm:flex justify-around p-20">
+            <div class="mb-5">
+                  <div class="flex gap-4 mb-5">
+                        <img src="./images/logo.webp" alt="">
+                        <a class="text-2xl font-bold text-[#fff]">Peddy</a>
+                  </div>
+                  <div class="text-slate-300 mb-5">
+                        <h2><a href="">Location: av. Washington 165, NY CA 54003</a></h2>
+                        <h2><a href="">Phone: +31 85 964 47 25</a></h2>
+                        <h2><a href="">Email: info@yourdomain.com</a></h2>
+                        <h2><a href="">Openings hours: 9.00 AM - 5.00 PM</a></h2>
+                  </div>
+                  <div class="flex gap-5">
+                        <img class="w-8 h-8" src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="">
+                        <img class="w-8 h-8" src="https://cdn-icons-png.flaticon.com/128/3670/3670151.png" alt="">
+                        <img class="w-8 h-8" src="https://cdn-icons-png.flaticon.com/128/174/174883.png" alt="">
+                        <img class="w-8 h-8" src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="">
+                  </div>
+            </div>
+            <div class="text-slate-300 mb-5">
+                  <h1 class="text-[#fff] text-2xl font-bold mb-5">Useful Links</h1>
+                  <h3><a href="">Home</a></h3>
+                  <h3><a href="">About Us</a></h3>
+                  <h3><a href="">Animals</a></h3>
+                  <h3><a href="">Foundation</a></h3>
+                  <h3><a href="">Contact</a></h3>
+            </div>
+            <div>
+                  <h1 class="text-[#fff] text-2xl font-bold mb-5">Drop a Message</h1>
+                  <input class="text-slate-950 py-3 px-7 rounded-xl mb-5" type="text" placeholder="Enter your email"> <br>
+                  <button class="bg-[#0E7A81] text-[#fff] px-20 py-3 rounded-xl">Subscribe</button>
+            </div>
+      </div>
+</footer>
+
+            <script src="script/main.js"></script>
+      </body>
+</html>
